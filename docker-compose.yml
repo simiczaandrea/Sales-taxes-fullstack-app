@@ -1,0 +1,35 @@
+version: "3"
+services:
+
+  employee-backend:
+    container_name: employee-backend
+    image: employee-backend
+    build: ./backend
+    ports:
+      - "8090:8080"
+    networks:
+      - employee-mysql
+    depends_on:
+      - mysqldb
+    restart: on-failure
+
+  employee-frontend:
+    container_name: employee-frontend
+    image: employee-frontend
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - employee-backend
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - employee-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=RnE#4Pqa4S6
+      - MYSQL_DATABASE=salestaxesdb
+
+
+networks:
+  employee-mysql:
