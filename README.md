@@ -2,18 +2,21 @@
 
 ## Problem description
 
-Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt. Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions.
+Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt.
+Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no exemptions.
 
-When I purchase items I receive a receipt which lists the name of all the items and their price (including tax), finishing with the total cost of the items, and the total amounts of sales taxes paid. 
+When I purchase items I receive a receipt which lists the name of all the items and their price (including tax),
+finishing with the total cost of the items, and the total amounts of sales taxes paid.
 
-The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains (np/100 rounded up to the nearest 0.05) amount of sales tax.
+The rounding rules for sales tax are that for a tax rate of n%, a shelf price of p contains (np/100 rounded up to the
+nearest 0.05) amount of sales tax.
 
 ## Goal of project
 
 Write an application that prints out the receipt details for these shopping baskets...
 
 ### INPUT:
-    
+
     Input 1:
     > 1 book at 12.49
     > 1 music CD at 14.99
@@ -30,7 +33,7 @@ Write an application that prints out the receipt details for these shopping bask
     > 1 box of imported chocolates at 11.25
 
 ### OUTPUT
-    
+
     Output 1:
     > 1 book: 12.49
     > 1 music CD: 16.49
