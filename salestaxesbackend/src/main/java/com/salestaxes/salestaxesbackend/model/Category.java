@@ -1,6 +1,7 @@
 package com.salestaxes.salestaxesbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +26,10 @@ public class Category {
             CascadeType.REFRESH}, orphanRemoval=true)
     List<Product> productList;
 
-
-    public Category(String categoryName, boolean isTaxFree, List<Product> productList) {
+    public Category(Long categoryId, String categoryName, boolean isTaxFree) {
+        this.categoryId = categoryId;
         this.categoryName = categoryName;
         this.isTaxFree = isTaxFree;
-        this.productList = productList;
     }
+
 }

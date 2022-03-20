@@ -13,4 +13,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
     @Query(value = "SELECT p FROM product p")
     List<ProductView> getProducts();
     Product getProductByProductId(Long productId);
+    Boolean existsByProductId(Long productId);
 }
+
