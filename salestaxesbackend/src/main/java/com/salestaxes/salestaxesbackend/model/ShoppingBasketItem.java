@@ -28,4 +28,10 @@ public class ShoppingBasketItem {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Product product;
 
+    public ShoppingBasketItem(int amount, double productTaxAmount, double productGrossPrice, Product product) {
+        this.amount = amount;
+        this.productTaxAmount = productTaxAmount;
+        this.productGrossPrice = productGrossPrice;
+        this.product = product;
+    }
 }
