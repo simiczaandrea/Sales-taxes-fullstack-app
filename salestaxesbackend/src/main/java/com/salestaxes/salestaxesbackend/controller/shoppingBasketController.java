@@ -1,5 +1,6 @@
 package com.salestaxes.salestaxesbackend.controller;
 
+import com.salestaxes.salestaxesbackend.model.Product;
 import com.salestaxes.salestaxesbackend.model.ShoppingBasketItem;
 import com.salestaxes.salestaxesbackend.service.ShoppingBasketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class shoppingBasketController {
     ShoppingBasketService shoppingBasketService;
 
     @PostMapping("/saveToBasket")
-    public ResponseEntity<?> saveItemToShoppingBasket(ShoppingBasketItem item){
-        return shoppingBasketService.addItemToBasket(item);
+    public ResponseEntity<?> saveItemToShoppingBasket(Long productId){
+        return shoppingBasketService.addItemToBasket(productId);
     }
 
     @GetMapping("/shoppingBasket")
