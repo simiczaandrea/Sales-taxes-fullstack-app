@@ -13,3 +13,6 @@ insert ignore into product (product_id, is_imported, product_name, products_net_
 insert ignore into product (product_id, is_imported, product_name, products_net_price, category_id) values (7, false, 'bottle of perfume', 18.99, 5);
 insert ignore into product (product_id, is_imported, product_name, products_net_price, category_id) values (8, false, 'packet of headache pills', 9.45, 3);
 insert ignore into product (product_id, is_imported, product_name, products_net_price, category_id) values (9, true, 'box of chocolates', 11.25, 2);
+
+insert ignore into sales_taxes(tax_id, tax_amount, tax_name) values (1, 10, 'sales tax');
+insert ignore into sales_taxes(tax_id, tax_amount, tax_name) values (2, 5, 'import tax');

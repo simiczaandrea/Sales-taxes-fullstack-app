@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
+    private long productId;
     private String productName;
     private boolean isImported;
     private double productsNetPrice;

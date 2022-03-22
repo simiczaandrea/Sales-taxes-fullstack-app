@@ -4,10 +4,7 @@ import com.salestaxes.salestaxesbackend.model.Product;
 import com.salestaxes.salestaxesbackend.payloads.ProductView;
 import com.salestaxes.salestaxesbackend.repository.ProductRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,18 +14,15 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     public List<ProductView> getAllProduct() {
-        List<ProductView> productList = new ArrayList<>();
-
-        return productList;
+        return productRepository.getProducts();
     }
 
-    public Product findProductById(){
-        Product product = new Product();
+    public Product findProductById(Long productId){
 
-
-        return product;
+        if(productRepository.existsByProductId(productId)){
+            return productRepository.getProductByProductId(productId);
+        }
+        return  null;
     }
-
-
 
 }
