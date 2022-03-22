@@ -9,6 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//to run this test you should comment out H2 db adn uncomment normal db
+// it's only read data from it, don't modify anything
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 class CalculateTaxTest {

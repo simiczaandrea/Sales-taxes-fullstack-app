@@ -3,6 +3,7 @@ package com.salestaxes.salestaxesbackend.repository;
 import com.salestaxes.salestaxesbackend.model.Category;
 import com.salestaxes.salestaxesbackend.model.Product;
 import com.salestaxes.salestaxesbackend.payloads.ProductView;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -23,6 +24,7 @@ class ProductRepositoryTest {
 
 
     @Test
+    @DisplayName("Getting Products from database")
     void itShouldCheckIfAllProductSelected() {
         List<Category> categories = new ArrayList<>();
         categories.add(new Category(1L, "book", true));
