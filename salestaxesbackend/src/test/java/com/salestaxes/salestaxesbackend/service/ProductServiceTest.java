@@ -8,8 +8,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -33,23 +31,13 @@ class ProductServiceTest {
         verify(productRepository).getProducts();
     }
 
+
     @Test
     @DisplayName("Find product by product Id if it's exist")
     void findProductById() {
         long productId = 1;
-        productServiceUnderTest.findProductById();
+        productServiceUnderTest.findProductById(productId);
         verify(productRepository).existsByProductId(productId);
     }
 
-    @Test
-    @DisplayName("Product is not found")
-    void ProductIsNotFound() {
-        long productId = 15;
-
-        given(productRepository.existsByProductId(productId))
-                .willReturn(false);
-
-        assertThatThrownBy(() -> productServiceUnderTest.findProductById())
-                .isInstanceOf(RuntimeException.class);
-    }
 }
